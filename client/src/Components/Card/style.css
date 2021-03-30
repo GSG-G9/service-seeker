@@ -1,0 +1,17 @@
+.cardDescription{
+    text-align: left;
+}
+.cardLocation{
+    font-size: 12px;
+    margin-left: 5px;
+}
+.cardLocation span{
+    margin-left: 5px;
+    font-weight: bold;
+}
+.cardHireMe{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
