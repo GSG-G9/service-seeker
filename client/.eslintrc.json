@@ -3,10 +3,10 @@
         "browser": true,
         "es2021": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
+    "extends":[
+      "airbnb", "prettier","plugin:jest/recommended", "plugin:prettier/recommended"
+    ]
+    ,
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
