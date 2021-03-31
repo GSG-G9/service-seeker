@@ -12,7 +12,7 @@ module.exports = {
   '@pagination-item-bg': '#FDCB6E',
   '@pagination-item-bg-active': '@primary-color',
   '@pagination-item-link-bg': '#F3E9EA',
-  '@text-color': '#485C73',
+  '@text-color': '#5C5C5C',
   '@border-color-base': '#E0E0E0',
   // '@heading-1-size': 'ceil(@font-size-base * 2.71)',
   // '@heading-2-size': 'ceil(@font-size-base * 2.14)',
@@ -38,7 +38,7 @@ module.exports = {
   '@input-hover-border-color': '@input-border-color',
 
   // // Form
-  '@label-color': '6F6F6F',
+  '@label-color': '#6F6F6F',
   // '@form-item-label-font-size:': '20px',
 
   // // Layout

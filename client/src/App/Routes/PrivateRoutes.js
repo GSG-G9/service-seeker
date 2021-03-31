@@ -6,14 +6,10 @@ import { LOGIN_PAGE, HOME_PAGE } from '../../Utils/routes.constant';
 import { AuthContext } from '../../Context/Authentication';
 
 const PrivateRoutes = ({ isProvider, children, ...otherProps }) => {
-  const {
-    isAuth,
-    authLoading,
-    userData: { role },
-  } = useContext(AuthContext);
+  const { isAuth, authLoading, userData } = useContext(AuthContext);
 
-  if (isAuth && !authLoading) {
-    if (!isProvider && role !== 'provider') {
+  if (!authLoading && isAuth) {
+    if (isProvider && userData.role !== 'provider') {
       return <Redirect to={HOME_PAGE} />;
     }
     return <Route {...otherProps}>{children}</Route>;

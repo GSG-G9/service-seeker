@@ -18,27 +18,28 @@
       "react"
   ],
   "rules": {
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".js", ".jsx"]
-      }
-    ],
-    "react/jsx-props-no-spreading": [0],
-    // configure the prettier plugin
-    "prettier/prettier": [
-      "error",
-      {
-        "trailingComma": "es5",
-        "singleQuote": true,
-        "endOfLine": "auto"
-      }
-    ],   
-    "comma-dangle": ["error", "only-multiline"],
-    "object-curly-newline": ["error", {
-      "ObjectExpression": "always",
-      "ObjectPattern": { "multiline": true }
-  }]
+    "linebreak-style": 0,
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [".js", ".jsx"]
+        }
+      ],
+      "react/jsx-props-no-spreading": [0],
+      // configure the prettier plugin
+      "prettier/prettier": [
+        "error",
+        {
+          "trailingComma": "es5",
+          "singleQuote": true,
+          "endOfLine": "auto"
+        }
+      ],   
+      "comma-dangle": ["error", "only-multiline"],
+      "object-curly-newline": ["error", {
+        "ObjectExpression": "always",
+        "ObjectPattern": { "multiline": true }
+    }]
 
     }
 }

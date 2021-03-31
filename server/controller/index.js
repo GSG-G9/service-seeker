@@ -1,6 +1,7 @@
 const { clientError, serverError } = require('./error');
 const {
   loginController,
+  signupController,
   isAuthController,
   logoutController,
 } = require('./user');
@@ -8,6 +9,7 @@ const {
 module.exports = {
   clientError,
   serverError,
+  signupController,
   loginController,
   isAuthController,
   logoutController,
