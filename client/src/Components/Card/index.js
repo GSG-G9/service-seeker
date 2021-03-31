@@ -18,57 +18,6 @@ const CommonCard = ({
   Name,
   avatarImage,
 }) => (
-  /*  <Card className="cardStyle">
-    <Row>
-      <Col sm={24} md={4} lg={3}>
-        <Image src={ImageSrc} className="imageStyle" />
-      </Col>
-      <Col sm={24} md={1} lg={1} />
-      <Col sm={24} md={13} lg={15} className="cardDescription">
-        <Title level={4}>{TitleJob}</Title>
-        <div>
-          <Rate value={rate} />
-          <Text type="secondary" className="cardLocation">
-            location:
-            <Text>{city}</Text>
-          </Text>
-        </div>
-        <div>
-          <Text type="secondary" className="cardLocation">
-            Price:
-            <Text>{priceByHour}$</Text>
-          </Text>
-        </div>
-        <Paragraph
-          ellipsis={{
-            rows: 24,
-          }}
-        >
-          {descriptions}
-        </Paragraph>
-      </Col>
-      <Col sm={24} md={6} lg={5}>
-        <div className="cardHireMe">
-          <div>
-            <Avatar size={100} src={avatarImage} />
-            <div>
-              <Text>{Name}</Text>
-            </div>
-          </div>
-
-          <CommonButton
-            handelClick={onclick}
-            type="primary"
-            className="initial-style primaryButton"
-            id="buttonStyle"
-          >
-            Hire me
-          </CommonButton>
-        </div>
-      </Col>
-    </Row>
-  </Card> */
-
   <Card className="cardStyle">
     <Row gutter={[16, 16]} type="flex" justify="start">
       <Col sm={24} md={6} lg={6}>
@@ -105,7 +54,6 @@ const CommonCard = ({
               <Text>{Name}</Text>
             </div>
           </div>
-
           <CommonButton
             handelClick={onclick}
             type="primary"
