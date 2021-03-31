@@ -9,11 +9,15 @@ const router = require('./router');
 const { serverError, clientError } = require('./controller');
 
 const app = express();
+
 app.set('PORT', process.env.PORT || 8080);
+app.disable('x-powered-by');
 
 const middleware = [
   express.json(),
-  express.urlencoded({ extended: false }),
+  express.urlencoded({
+    extended: false,
+  }),
   cookieParser(),
   express.static(join(__dirname, '..', 'client', 'public')),
   logger('dev'),

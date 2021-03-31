@@ -10,11 +10,14 @@ import {
   PROVIDER_PROFILE_PAGE,
   PROVIDER_DASHBOARD_PAGE,
 } from '../Utils/routes.constant';
+
 import 'antd/dist/antd.less';
 import './style.css';
+import Card from '../Components/Card';
 
 const App = () => (
   <div className="App">
+    <Card />
     <Switch>
       <Route exact path={HOME_PAGE}>
         Home Page

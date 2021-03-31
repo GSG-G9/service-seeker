@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Card, Row, Col, Image, Typography, Rate, Avatar } from 'antd';
 import './style.css';
 
@@ -6,25 +8,35 @@ import CommonButton from '../Button';
 
 const { Title, Text, Paragraph } = Typography;
 
-const CommonCard = () => (
-  <Card>
-    <Row gutter={[16, 16]} type="flex" justify="start">
-      <Col sm={24} md={6} lg={6}>
-        <Image src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+const CommonCard = ({
+  ImageSrc,
+  TitleJob,
+  city,
+  rate,
+  priceByHour,
+  descriptions,
+  Name,
+  avatarImage,
+}) => (
+  /*  <Card className="cardStyle">
+    <Row>
+      <Col sm={24} md={4} lg={3}>
+        <Image src={ImageSrc} className="imageStyle" />
       </Col>
-      <Col sm={24} md={14} lg={14} className="cardDescription">
-        <Title level={4}>h3. Ant Design</Title>
+      <Col sm={24} md={1} lg={1} />
+      <Col sm={24} md={13} lg={15} className="cardDescription">
+        <Title level={4}>{TitleJob}</Title>
         <div>
-          <Rate value={4} />
+          <Rate value={rate} />
           <Text type="secondary" className="cardLocation">
             location:
-            <Text>Gaza</Text>
+            <Text>{city}</Text>
           </Text>
         </div>
         <div>
           <Text type="secondary" className="cardLocation">
             Price:
-            <Text>20$</Text>
+            <Text>{priceByHour}$</Text>
           </Text>
         </div>
         <Paragraph
@@ -32,21 +44,65 @@ const CommonCard = () => (
             rows: 24,
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius
-          elit erat odio dictum felis dolor adipiscing varius. Nisl bibendum
-          orci in eleifend proin. Leo at lacus, iaculis aliquet. Felis, turpis
-          dui, rhoncus massa id nisl rutrum sapien. Eu le...
+          {descriptions}
+        </Paragraph>
+      </Col>
+      <Col sm={24} md={6} lg={5}>
+        <div className="cardHireMe">
+          <div>
+            <Avatar size={100} src={avatarImage} />
+            <div>
+              <Text>{Name}</Text>
+            </div>
+          </div>
+
+          <CommonButton
+            handelClick={onclick}
+            type="primary"
+            className="initial-style primaryButton"
+            id="buttonStyle"
+          >
+            Hire me
+          </CommonButton>
+        </div>
+      </Col>
+    </Row>
+  </Card> */
+
+  <Card className="cardStyle">
+    <Row gutter={[16, 16]} type="flex" justify="start">
+      <Col sm={24} md={6} lg={6}>
+        <Image src={ImageSrc} className="imageStyle" />
+      </Col>
+      <Col sm={24} md={14} lg={14} className="cardDescription">
+        <Title level={4}>{TitleJob}</Title>
+        <div>
+          <Rate value={rate} />
+          <Text type="secondary" className="cardLocation">
+            location:
+            <Text>{city}</Text>
+          </Text>
+        </div>
+        <div>
+          <Text type="secondary" className="cardLocation">
+            Price:
+            <Text>{priceByHour}$</Text>
+          </Text>
+        </div>
+        <Paragraph
+          ellipsis={{
+            rows: 24,
+          }}
+        >
+          {descriptions}
         </Paragraph>
       </Col>
       <Col sm={24} md={4} lg={4}>
         <div className="cardHireMe">
           <div>
-            <Avatar
-              size={64}
-              src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-            />
+            <Avatar size={100} src={avatarImage} />
             <div>
-              <Text>Name</Text>
+              <Text>{Name}</Text>
             </div>
           </div>
 
@@ -62,4 +118,27 @@ const CommonCard = () => (
     </Row>
   </Card>
 );
+CommonCard.propTypes = {
+  priceByHour: PropTypes.float,
+  ImageSrc: PropTypes.string,
+  TitleJob: PropTypes.string,
+  city: PropTypes.string,
+  rate: PropTypes.Integer,
+  descriptions: PropTypes.string,
+  Name: PropTypes.string,
+  avatarImage: PropTypes.string,
+};
+CommonCard.defaultProps = {
+  priceByHour: 17.5,
+  ImageSrc:
+    'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+  avatarImage:
+    'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+  TitleJob: 'developer',
+  city: 'Gaza',
+  rate: 3.5,
+  descriptions: 'welcome im my Job card ',
+  Name: 'Reinald',
+};
+
 export default CommonCard;

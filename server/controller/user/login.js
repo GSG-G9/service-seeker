@@ -9,7 +9,9 @@ const loginController = async (req, res, next) => {
   try {
     const {
       rows: [user],
-    } = await checkUserByEmail({ email });
+    } = await checkUserByEmail({
+      email,
+    });
 
     if (!user) throw boomify(404, 'User is not exist.');
 
@@ -17,7 +19,10 @@ const loginController = async (req, res, next) => {
     if (!isPassword) throw boomify(400, 'Invalid email/password.');
 
     const { id, role } = user;
-    const token = await promiseJWT(sign, { id, role });
+    const token = await promiseJWT(sign, {
+      id,
+      role,
+    });
 
     res.cookie('token', token).json({
       message: 'Login successfully.',

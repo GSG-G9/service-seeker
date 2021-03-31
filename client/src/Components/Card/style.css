@@ -1,6 +1,7 @@
 .cardDescription{
     text-align: left;
 }
+
 .cardLocation{
     font-size: 12px;
     margin-left: 5px;
@@ -14,4 +15,18 @@
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
+    border-left: 1px solid #c4c4c4;
+    padding: 0 50px;
+}
+.imageStyle{
+    border-radius: 10px;
+    height: 100%
+}
+.cardStyle{
+    border-radius: 5px;
+    border: 1px solid #f4f4f4;
+    box-shadow: 0 1px 20px rgb(26 50 128 / 8%);
+}
+#buttonStyle{
+    border-radius: 25px
 }

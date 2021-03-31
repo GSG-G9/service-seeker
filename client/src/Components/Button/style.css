@@ -13,28 +13,36 @@
 .primaryButton {
   background-color: #ffc107;
 }
-.primaryButton:hover{
+.primaryButton:hover,.primaryButton:focus{
   color:#ffc107;
   border-color: #ffc107;
+  background-color: #ffffff;
+
 
 }
 .secondaryButton {
   background-color: #0eb633;
   border-color: #0eb633;
+  
 
 }
-.secondaryButton:hover{
+.secondaryButton:hover ,.secondaryButton:focus{
   color:#0eb633;
   border-color: #0eb633;
+  background-color: #ffffff;
+
 
 }
 .thirdButton {
   background-color: #332a94;
   border-color: #332a94;
+  
 
 }
-.thirdButton:hover{
+.thirdButton:hover,.thirdButton:focus{
   color:#332a94;
   border-color: #332a94;
+  background-color: #ffffff;
+
 
 }

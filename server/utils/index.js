@@ -1,4 +1,7 @@
-const promiseJWT = require('./jwtFunctions');
 const boomify = require('./boomify');
+const promiseJWT = require('./jwtFunctions');
 
-module.exports = { promiseJWT, boomify };
+module.exports = {
+  promiseJWT,
+  boomify,
+};

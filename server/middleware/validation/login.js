@@ -8,7 +8,9 @@ const loginValidation = async (req, res, next) => {
       email: string().email().required(),
       password: string().min(8).required(),
     });
-    await schema.validate(req.body, { abortEarly: false });
+    await schema.validate(req.body, {
+      abortEarly: false,
+    });
     next();
   } catch (error) {
     next(boomify(400, error.errors[0]));
