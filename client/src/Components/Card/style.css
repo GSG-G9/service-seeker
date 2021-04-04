@@ -1,0 +1,104 @@
+.cardStyle {
+  border-radius: 12px;
+  border: 1px solid #f4f4f4;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.09);
+  margin-bottom: 19px;
+}
+
+#cardTitle {
+  margin: 0;
+}
+
+.imageContener {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageStyle {
+  border-radius: 10px;
+  max-width: 184px;
+  width: 100%;
+}
+
+.cardDescription {
+  text-align: left;
+}
+
+.cardRating__text {
+  font-weight: bold;
+  font-size: 16px;
+  padding-right: 6px;
+  line-height: 1.7;
+}
+
+.cardRating__stars {
+  font-size: 17.5px;
+}
+
+.cardLocation {
+  margin: 6px 0 0 6px;
+}
+
+.cardLocation,
+.cardPrice {
+  font-size: 15px;
+}
+
+.cardLocation span,
+.cardPrice span {
+  margin-left: 5px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#cardDes {
+  font-size: 14px;
+}
+
+.cardHireMe {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.hireBtn {
+  margin-top: 20px;
+  border-radius: 12px;
+  height: 39px;
+  font-size: 17px;
+  line-height: 11px;
+  width: 104px;
+}
+
+.cardDescription__top {
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 990px) {
+  .cardLocation {
+    margin: 0;
+  }
+
+  .cardHireMe {
+    border: none;
+    border-top: 1.5px solid #f2f3f4;
+  }
+
+  .imageStyle {
+    max-width: 100%;
+  }
+
+  .cardDescription__top {
+    flex-direction: column;
+  }
+  
+  .hireBtn {
+    width: 100%;
+    height: 43px;
+  }
+
+  .cardHireContener {
+    margin: 0 auto;
+  }
+}

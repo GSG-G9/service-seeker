@@ -4,7 +4,7 @@ const isAuthController = async (req, res, next) => {
   const { id: userId } = req.user;
   try {
     const {
-      rows: [{ id, name, avatar, role }],
+      rows: [{ id, username, avatar, role }],
     } = await getUserData({
       userId,
     });
@@ -13,7 +13,7 @@ const isAuthController = async (req, res, next) => {
       statusCode: 200,
       data: {
         id,
-        name,
+        username,
         avatar,
         role,
       },

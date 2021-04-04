@@ -3,5 +3,6 @@
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
-  }
+  },
+  "files.eol": "\n",
 }

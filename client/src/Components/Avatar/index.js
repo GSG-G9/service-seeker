@@ -1,16 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Avatar } from 'antd';
-import PropType from 'prop-types';
 import { UserOutlined } from '@ant-design/icons';
 
-const AvatarUsers = (shape, imgSrc, size) => (
-  <Avatar size={size} shape={shape} src={imgSrc} icon={<UserOutlined />} />
+const AvatarUsers = ({ srcImg, ...rest }) => (
+  <Avatar src={srcImg} icon={!srcImg ? <UserOutlined /> : null} {...rest} />
 );
 
-AvatarUsers.propType = {
-  size: PropType.oneOfType([PropType.string, PropType.number]).isRequired,
-  imgSrc: PropType.string.isRequired,
-  shape: PropType.string.isRequired,
+AvatarUsers.propTypes = {
+  srcImg: PropTypes.string,
 };
 
 export default AvatarUsers;

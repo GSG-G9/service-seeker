@@ -1,44 +1,46 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "react/jsx-filename-extension": [
-          1,
-          {
-            "extensions": [".js", ".jsx"]
-          }
-        ],
-        "react/jsx-props-no-spreading": [0],
-        // configure the prettier plugin
-        "prettier/prettier": [
-          "error",
-          {
-            "trailingComma": "es5",
-            "singleQuote": true,
-            "endOfLine": "auto"
-          }
-        ],   
-        "comma-dangle": ["error", "only-multiline"],
-        "object-curly-newline": ["error", {
-          "ObjectExpression": "always",
-          "ObjectPattern": { "multiline": true }
-      }]
+  "env": {
+      "browser": true,
+      "es2021": true
+  },
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+  ],
+  "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+  },
+  "plugins": [
+      "react"
+  ],
+  "rules": {
+    "linebreak-style": 0,
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [".js", ".jsx"]
+        }
+      ],
+      "react/jsx-props-no-spreading": [0],
+      // configure the prettier plugin
+      "prettier/prettier": [
+        "error",
+        {
+          "trailingComma": "es5",
+          "singleQuote": true,
+          "endOfLine": "auto"
+        }
+      ],   
+      "operator-linebreak": ["error", "before"],
+      "comma-dangle": ["error", "only-multiline"],
+      "object-curly-newline": ["error", {
+        "ObjectExpression": "always",
+        "ObjectPattern": { "multiline": true }
+    }]
 
-      }
+  }
 }

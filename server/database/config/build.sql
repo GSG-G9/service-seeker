@@ -17,10 +17,12 @@ CREATE TABLE users (
 CREATE TABLE providers (
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id) ON UPDATE CASCADE NOT NULL,
+    title TEXT,
     bio TEXT,
-    price_houer FLOAT,
+    price_hour FLOAT,
     availability boolean DEFAULT false,
-    rating INTEGER DEFAULT 100
+    rating INTEGER DEFAULT 100,
+    cover_image TEXT
 );
 CREATE TABLE ordes_request (
     id SERIAL PRIMARY KEY,
