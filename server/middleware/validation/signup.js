@@ -30,8 +30,8 @@ const signupValidation = async (req, res, next) => {
         'Passwords must match'
       ),
       mobile: string().min(9).required(),
-      location: string().required('Loocation'),
-      role: string().oneOf(['customer', 'provider']).required(),
+      location: string().required('Location is required'),
+      role: string().oneOf(['user', 'provider']).required(),
     });
 
     await signupSchema.validate(

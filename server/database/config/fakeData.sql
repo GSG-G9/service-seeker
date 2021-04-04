@@ -45,13 +45,16 @@ VALUES (
   );
 INSERT INTO providers(
     user_id,
+    title,
     bio,
-    price_houer,
+    price_hour,
     availability,
-    rating
+    rating,
+    cover_image
   )
 VALUES (
     1,
+    'Lipsum generator',
     'Phasellus in felis. Donec semper sapien a libero. Nam dui.
 
 Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.
@@ -59,16 +62,19 @@ Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan fe
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.',
     4.6,
     true,
-    5
+    5,
+    'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
   ),
   (
     3,
+    'Lipsum generator',
     'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
 
 Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.',
     7.8,
     true,
-    3
+    3,
+    'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
   );
 INSERT INTO ordes_request(
     user_id,
@@ -126,5 +132,3 @@ INSERT INTO orders(
     2,
     'order request number 1 canceled'
   );
-  
-  

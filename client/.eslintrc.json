@@ -35,11 +35,20 @@
           "endOfLine": "auto"
         }
       ],   
+<<<<<<< HEAD
+=======
+      "operator-linebreak": ["error", "before"],
+>>>>>>> 4f93cd97c6abc203068752bce99578f91730fbc4
       "comma-dangle": ["error", "only-multiline"],
       "object-curly-newline": ["error", {
         "ObjectExpression": "always",
         "ObjectPattern": { "multiline": true }
     }]
 
+<<<<<<< HEAD
     }
 }
+=======
+  }
+}
+>>>>>>> 4f93cd97c6abc203068752bce99578f91730fbc4
