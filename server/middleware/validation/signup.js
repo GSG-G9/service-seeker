@@ -31,7 +31,7 @@ const signupValidation = async (req, res, next) => {
       ),
       mobile: string().min(9).required(),
       location: string().required('Loocation'),
-      role: string().oneOf(['customer', 'provider']).required(),
+      role: string().oneOf(['user', 'provider']).required(),
     });
 
     await signupSchema.validate(
