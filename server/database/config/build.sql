@@ -38,7 +38,7 @@ CREATE TABLE orders (
     start_date TIMESTAMP,
     pasued_date TIMESTAMP,
     state VARCHAR(55),
-    arrive_time TIME(7),
+    arrive_time TIME(6),
     houer_number FLOAT,
     resources_price FLOAT,
     total_bill_price FLOAT
