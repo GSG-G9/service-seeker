@@ -58,3 +58,16 @@
   border-color: #ffc107;
   background-color: #ffc107;
 }
+
+.sixthButton,
+.sixthButton:focus {
+  background-color: #5c5c5c;
+  border-color: #5c5c5c;
+  color: #ffffff;
+}
+
+.sixthButton:hover {
+  color: #ffffff;
+  border-color: #2d3436;
+  background-color: #2d3436;
+}

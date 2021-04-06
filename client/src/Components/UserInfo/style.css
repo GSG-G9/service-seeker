@@ -1,0 +1,28 @@
+.logged-user-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logged-user-info > p {
+  margin-right: 10px;
+}
+
+.logged-user-info > span {
+  margin-right: 10px;
+}
+
+.user-name {
+  font-size: 17.5px;
+  letter-spacing: 0.25px;
+  color: #485c73;
+}
+
+.UserInfo-icon {
+  display: block;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  height: 34px;
+  width: 34px;
+  padding: 7px;
+}

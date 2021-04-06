@@ -1,28 +1,46 @@
 import React, { useContext } from 'react';
-import { element } from 'prop-types';
-import { Spin } from 'antd';
+import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
+import { Layout, Spin } from 'antd';
+import Footer from '../../Components/Footer';
+import Header from '../../Components/NavBar';
 
 import { AuthContext } from '../../Context/Authentication';
+import {
+  LOGIN_PAGE,
+  REGISTER_PAGE,
+  PROVIDER_DASHBOARD_PAGE,
+} from '../../Utils/routes.constant';
 
-function Layout({ children }) {
+import './style.css';
+
+const { Content } = Layout;
+
+const withoutLayout = [LOGIN_PAGE, REGISTER_PAGE, PROVIDER_DASHBOARD_PAGE];
+
+const LayoutPage = ({ children }) => {
   const { authLoading } = useContext(AuthContext);
+  const { pathname } = useLocation();
+
+  const isWithLayout = !withoutLayout.includes(pathname);
+
   return (
     <>
       {authLoading ? (
-        <Spin size="large" />
+        <Spin size="large" className="loading" />
       ) : (
-        <div>
-          <h1>header</h1>
-          {children}
-          <h1>footer</h1>
-        </div>
+        <>
+          {isWithLayout && <Header />}
+          <Content className="page">{children}</Content>
+          {isWithLayout && <Footer />}
+        </>
       )}
     </>
   );
-}
-
-Layout.propTypes = {
-  children: element.isRequired,
 };
 
-export default Layout;
+LayoutPage.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default LayoutPage;

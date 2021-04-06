@@ -11,6 +11,7 @@ const protectRoute = async (req, res, next) => {
     };
     next();
   } catch (error) {
+    res.clearCookie('token');
     next(boomify(401, 'Unauthenticated'));
   }
 };

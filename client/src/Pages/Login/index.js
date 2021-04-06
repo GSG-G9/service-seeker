@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import { Typography, Row, Col, Form, Alert } from 'antd';
 
-import { REGISTER_PAGE } from '../../Utils/routes.constant';
+import { REGISTER_PAGE, HOME_PAGE } from '../../Utils/routes.constant';
 import { AuthContext } from '../../Context/Authentication';
 import Input from '../../Components/Input';
 import Button from '../../Components/Button';
+
+import handelError from '../../Utils/errorHandel';
 
 import './style.css';
 
@@ -16,7 +18,8 @@ const LoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
-  const { setIsAuth } = useContext(AuthContext);
+  const { refresh, setRefresh, setAuthLoading } = useContext(AuthContext);
+  const history = useHistory();
 
   const onFinish = async ({ email, password }) => {
     try {
@@ -25,16 +28,12 @@ const LoginPage = () => {
         email,
         password,
       });
-      setIsAuth(true);
+      setRefresh(!refresh);
       setIsLoading(false);
+      setAuthLoading(true);
+      history.push(HOME_PAGE);
     } catch (err) {
-      if (err.response) {
-        setError(
-          err.response.status === 500
-            ? 'Something went wrong!'
-            : err.response.data.message
-        );
-      }
+      handelError(setError, err);
       setIsLoading(false);
     }
   };
@@ -46,7 +45,7 @@ const LoginPage = () => {
           <Title id="login-left__title" level={3}>
             Service Seeker
           </Title>
-          {error && <Alert id="alert" message={error} type="info" showIcon />}
+          {error && <Alert id="alert" message={error} type="error" showIcon />}
           <Form.Item
             name="email"
             rules={[

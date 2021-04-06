@@ -1,4 +1,3 @@
-/* eslint-disable operator-linebreak */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Empty, Pagination, Typography, Row, Col } from 'antd';

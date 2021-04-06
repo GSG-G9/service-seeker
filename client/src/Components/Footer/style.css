@@ -1,0 +1,15 @@
+.footer {
+  position: absolute;
+  width: 100%;
+  font-size: 0.8rem;
+  bottom: 0;
+  text-align: center;
+  background-color: transparent;
+  font-size: 14px;
+  background-image: url(../../Utils/assets/images/footer.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 116px;
+  padding: 0;
+  padding-top: 92px;
+}

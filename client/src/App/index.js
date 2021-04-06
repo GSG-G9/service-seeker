@@ -7,14 +7,14 @@ import {
   ABOUT_US,
   REGISTER_PAGE,
   ORDERS_PAGE,
-  PROVIDER_PROFILE_PAGE,
   PROVIDER_DASHBOARD_PAGE,
 } from '../Utils/routes.constant';
 
-import { LoggedOutRoutes } from './Routes';
+import { LoggedOutRoutes, PrivateRoutes } from './Routes';
 import AuthProvider from '../Context/Authentication';
-import LoginPage from '../Pages/Login';
-import RegisterPage from '../Pages/Register';
+import Login from '../Pages/Login';
+import Layout from '../Pages/Layout';
+import Register from '../Pages/Register';
 
 import Layout from '../Pages/Layout';
 import './style.css';
@@ -30,22 +30,18 @@ const App = () => (
           <Route exact path={ABOUT_US}>
             About Us
           </Route>
-          <LoggedOutRoutes exact path={LOGIN_PAGE} component={LoginPage} />
-          <LoggedOutRoutes
-            exact
-            path={REGISTER_PAGE}
-            component={RegisterPage}
-          />
-
-          <Route exact path={ORDERS_PAGE}>
+          <LoggedOutRoutes exact path={LOGIN_PAGE}>
+            <Login />
+          </LoggedOutRoutes>
+          <LoggedOutRoutes exact path={REGISTER_PAGE}>
+            <Register />
+          </LoggedOutRoutes>
+          <PrivateRoutes exact path={ORDERS_PAGE}>
             Orders Page
-          </Route>
-          <Route exact path={PROVIDER_PROFILE_PAGE}>
-            Provider Profile Page
-          </Route>
-          <Route exact path={PROVIDER_DASHBOARD_PAGE}>
+          </PrivateRoutes>
+          <PrivateRoutes isProvider exact path={PROVIDER_DASHBOARD_PAGE}>
             Provider Dashboard Page
-          </Route>
+          </PrivateRoutes>
           <Route>Not Found 404</Route>
         </Switch>
       </Layout>
