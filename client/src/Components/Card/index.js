@@ -63,7 +63,7 @@ const CommonCard = ({
           <div>
             <Avatar size={75} className="avatarCard" srcImg={avatarImage} />
             <div>
-              <Text>{Name}</Text>
+              <Text className="name">{Name}</Text>
             </div>
           </div>
           <Button

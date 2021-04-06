@@ -67,12 +67,14 @@
   height: 39px;
   font-size: 17px;
   line-height: 11px;
-  width: 104px;
 }
 
 .cardDescription__top {
   display: flex;
   flex-direction: row;
+}
+.name.ant-typography{
+  overflow-wrap: initial;
 }
 
 @media only screen and (max-width: 990px) {
@@ -94,7 +96,7 @@
   }
   
   .hireBtn {
-    width: 100%;
+    
     height: 43px;
     font-size: 14px;
   }

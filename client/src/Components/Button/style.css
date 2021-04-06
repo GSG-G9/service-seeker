@@ -3,6 +3,7 @@
   border-radius: 5px;
   border: 1px solid #ffc107;
   transition: all 0.25s;
+  width: 100%;
 }
 
 .initial-style:hover {

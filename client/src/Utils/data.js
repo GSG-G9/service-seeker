@@ -4,6 +4,7 @@ export const serviceTypes = [
   'carpenter',
   'mechanic',
   'builder',
+  'Lipsum generator',
 ];
 
 export const locations = [
@@ -20,4 +21,5 @@ export const locations = [
   'nusirat',
   'maghazi',
   'dir al-balah',
+  '2878 Di Loreto Road',
 ];

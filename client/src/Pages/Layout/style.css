@@ -1,3 +1,6 @@
 .loading{
     margin-top: 50px;
 }
+.page{
+    min-height:  calc(100vh - 204px)
+}

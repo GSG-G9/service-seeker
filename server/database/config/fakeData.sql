@@ -72,7 +72,7 @@ Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.',
 
 Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.',
     7.8,
-    true,
+    false,
     3,
     'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
   );

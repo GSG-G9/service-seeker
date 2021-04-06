@@ -12,6 +12,8 @@ import {
 
 import { LoggedOutRoutes, PrivateRoutes } from './Routes';
 import AuthProvider from '../Context/Authentication';
+
+import LandingPage from '../Pages/Landing';
 import Login from '../Pages/Login';
 import Layout from '../Pages/Layout';
 import Register from '../Pages/Register';
@@ -24,7 +26,7 @@ const App = () => (
       <Layout>
         <Switch>
           <Route exact path={HOME_PAGE}>
-            Home Page
+            <LandingPage />
           </Route>
           <Route exact path={ABOUT_US}>
             About Us
