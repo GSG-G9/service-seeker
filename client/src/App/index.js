@@ -16,7 +16,6 @@ import Login from '../Pages/Login';
 import Layout from '../Pages/Layout';
 import Register from '../Pages/Register';
 
-import Layout from '../Pages/Layout';
 import './style.css';
 
 const App = () => (
