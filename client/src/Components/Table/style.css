@@ -1,0 +1,15 @@
+.table-contener .ant-table-container{
+  font-size: 15px;
+}
+
+.table-contener .ant-table-cell{
+  padding: 10px !important;
+}
+
+.table-contener .ant-table-body{
+  cursor: pointer;
+}
+
+.table-contener .ant-table-body *{
+  user-select: none;
+}

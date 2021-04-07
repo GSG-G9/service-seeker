@@ -113,7 +113,7 @@ INSERT INTO orders(
     resources_price,
     total_bill_price
   )VALUES(
-    1,
+    3,
     null,
     null,
     'accepted',
