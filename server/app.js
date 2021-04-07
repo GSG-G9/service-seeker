@@ -19,7 +19,7 @@ const middleware = [
     extended: false,
   }),
   cookieParser(),
-  express.static(join(__dirname, '..', 'client', 'public')),
+  express.static(join(__dirname, '..', 'client', 'build')),
   logger('dev'),
 ];
 app.use(middleware);
