@@ -38,9 +38,9 @@
     background-color: transparent;
     border-color: #ffeaa7;
     color: #fdcb6e;
-    height: 40px;
-    line-height: 1;
-    width: 100%
+    height: 42px;
+    line-height:1;
+    width: 53px !important;
   }
   
   .IconButton:hover,
