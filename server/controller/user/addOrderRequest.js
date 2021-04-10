@@ -1,13 +1,17 @@
 const { addOrderRequest } = require('../../database/queries');
 const { boomify } = require('../../utils');
+const { sendNotification } = require('../../utils');
 
 const userOrderRequest = async (req, res, next) => {
   const { id: userId } = req.user;
+  const { providerId } = req.body;
   try {
     await addOrderRequest({
       userId,
       ...req.body,
     });
+
+    sendNotification(req.app.io, providerId, 'addOrderReq');
 
     res.status(201).json({
       statusCode: 201,
