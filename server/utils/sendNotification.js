@@ -1,9 +1,13 @@
-const { getUserData, addUserNotification } = require('../database/queries');
+const {
+  getUserData,
+  addUserNotification,
+  getUserNotifications,
+} = require('../database/queries');
 
-const sendNotification = async (io, userId, type) => {
+const sendNotification = async (io, from, to, type) => {
   const {
     rows: [user],
-  } = await getUserData({ userId });
+  } = await getUserData({ userId: from });
 
   let description = '';
   switch (type) {
@@ -18,8 +22,10 @@ const sendNotification = async (io, userId, type) => {
       break;
   }
 
-  const { rows: data } = await addUserNotification({ userId, description });
-  io.to(userId).emit('notification', data);
+  await addUserNotification({ userId: to, description });
+
+  const { rows: data } = await getUserNotifications({ userId: to });
+  io.to(to).emit('notification', data);
 };
 
 module.exports = sendNotification;

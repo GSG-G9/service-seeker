@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Layout, Menu, Row, Col, Drawer, Grid } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
+import io from 'socket.io-client';
 
 import { AuthContext } from '../../Context/Authentication';
 import Button from '../Button';
@@ -16,6 +17,9 @@ import {
 
 import './style.css';
 
+const socket = io({
+  autoConnect: false,
+});
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
 
@@ -27,6 +31,24 @@ const NavBar = () => {
   const { pathname } = useLocation();
   const { md } = useBreakpoint();
   const history = useHistory();
+  const [notificationData, setNotificationData] = useState();
+
+  useEffect(() => {
+    if (isAuth) {
+      socket.open();
+      socket.emit('joinRoom', {
+        userId: userData.id,
+      });
+      socket.on('notification', (data) => {
+        setNotificationData(data);
+      });
+      return () => {
+        socket.removeAllListeners();
+        socket.close();
+      };
+    }
+    return () => {};
+  }, []);
 
   useEffect(() => {
     setVisible(false);
@@ -84,7 +106,7 @@ const NavBar = () => {
           Sign in
         </Button>
       ) : (
-        <UserInfo />
+        <UserInfo notificationData={notificationData} />
       )}
     </>
   );

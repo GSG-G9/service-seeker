@@ -1,0 +1,31 @@
+
+.not-panel{
+  position: absolute;
+  display: block;
+  width: 290.55px;
+  /* height: 391.95px; */
+  top: 73px;
+  right: 170px;
+  z-index: 2;
+  background: #FFFFFF;
+  box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.17);
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #5C5C5C;
+  line-height: 20px;
+  padding-bottom: 20px;
+}
+
+#not-panel__title{
+  font-size: 25px;
+  color: #485C73;
+  margin: 10px;
+}
+
+.not-panel__contener{
+  margin-bottom: 5px;
+}
+.not-panel__right{
+  text-align: left;
+  padding-right: 10px;
+}

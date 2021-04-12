@@ -17,9 +17,10 @@ const deleteOrderReqController = async (req, res, next) => {
     }
 
     const { provider_id: providerId, user_id: deletedUserId } = user;
-    const notifiedUserId = userId === providerId ? deletedUserId : providerId;
+    const to = userId === providerId ? deletedUserId : providerId;
+    const from = userId === providerId ? providerId : deletedUserId;
     // send Notification for thee anther user
-    sendNotification(req.app.io, notifiedUserId, 'rejectOrder');
+    sendNotification(req.app.io, from, to, 'rejectOrder');
 
     res.json({ statusCode: 200, message: 'order deleted successfully' });
   } catch (err) {

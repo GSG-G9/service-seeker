@@ -11,7 +11,7 @@ const userOrderRequest = async (req, res, next) => {
       ...req.body,
     });
 
-    sendNotification(req.app.io, providerId, 'addOrderReq');
+    sendNotification(req.app.io, userId, providerId, 'addOrderReq');
 
     res.status(201).json({
       statusCode: 201,
