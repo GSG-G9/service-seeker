@@ -2,11 +2,12 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import { Row, Col, Form, Typography, Radio, Alert } from 'antd';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 
 import Button from '../../Components/Button';
 import Input from '../../Components/Input';
 import Select from '../../Components/Select';
-import { LOGIN_PAGE } from '../../Utils/routes.constant';
+import { LOGIN_PAGE, HOME_PAGE } from '../../Utils/routes.constant';
 import { AuthContext } from '../../Context/Authentication';
 import './style.css';
 import { locations } from '../../Utils/data';
@@ -35,17 +36,25 @@ const Register = () => {
   return (
     <Row className="signup">
       <Col className="left-section" span={9}>
-        <Title className="title" level={2}>
-          Welcome Back
-        </Title>
-        <Paragraph className="desc">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </Paragraph>
-        <Link className="signin-link" to={LOGIN_PAGE}>
-          Signin
+        <Link to={HOME_PAGE} className="arrow-icon">
+          <ArrowLeftOutlined />
         </Link>
+        <div className="left-section-details">
+          <Title className="title" level={2}>
+            Welcome Back
+          </Title>
+          <Paragraph className="desc">
+            If you have an account you can signin from this link
+          </Paragraph>
+          <Link className="signin-link" to={LOGIN_PAGE}>
+            Signin
+          </Link>
+        </div>
       </Col>
       <Col span={15} className="signup-form-container">
+        <Link to={HOME_PAGE} className="arrow-icon arrow-icon_right">
+          <ArrowLeftOutlined />
+        </Link>
         <Title className="title" level={2}>
           Create A New Account
         </Title>

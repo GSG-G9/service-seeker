@@ -11,14 +11,25 @@
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 0 50px;
+}
+
+.signup .left-section .left-section-details {
+  margin: auto;
+}
+
+.arrow-icon {
+  margin-right: auto;
+  margin-top: 3rem;
+  font-size: 36px;
+  color: white;
+}
+
+.arrow-icon.arrow-icon_right {
+  display: none;
+  color: #555555;
 }
 
 .signup .left-section .title {
@@ -155,6 +166,18 @@
 @media only screen and (max-width: 1060px) {
   .signup .left-section {
     display: none;
+  }
+
+  .signup-form-container .arrow-icon_right {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .signup-form-container .arrow-icon_right:hover {
+    display: block;
+    margin-bottom: 2rem;
+    color: #757575;
+    transition: all 0.25;
   }
 
   .signup .signup-form-container .ant-form {
