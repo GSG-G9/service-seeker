@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import {
   Layout,
@@ -17,9 +18,11 @@ import {
   SyncOutlined,
   MenuOutlined,
   CloseOutlined,
+  ArrowLeftOutlined,
 } from '@ant-design/icons';
 
 import { AuthContext } from '../../Context/Authentication';
+import { HOME_PAGE } from '../../Utils/routes.constant';
 
 import LogoutComponent from '../../Components/Logout';
 import Avatar from '../../Components/Avatar';
@@ -110,6 +113,9 @@ const DashboardProvider = () => {
   const mySider = (
     <Sider className="siderStyle">
       <div>
+        <Link to={HOME_PAGE} className="arrow-icon">
+          <ArrowLeftOutlined />
+        </Link>
         <div className="logo">
           <Avatar srcImg={userData.avatar} size={100} />
 

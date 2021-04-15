@@ -94,3 +94,16 @@
   justify-content: center;
   align-items: center;
 }
+
+.siderStyle .arrow-icon {
+  margin-top: 3rem;
+  margin-left: 2rem;
+  font-size: 36px;
+  color: #555555;
+  transition: all 0.25s;
+}
+
+.siderStyle .arrow-icon:hover {
+  color: #757575;
+  transition: all 0.25s;
+}
