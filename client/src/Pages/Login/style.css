@@ -97,6 +97,17 @@
   font-size: 27px;
 }
 
+.login-left .arrow-icon {
+  margin-right: auto;
+  margin-top: 3rem;
+  font-size: 36px;
+  color: #555555;
+}
+
+.login-left .left-section-details {
+  margin: auto;
+}
+
 @media only screen and (max-width: 1060px) {
   .mobile-Sign-up-btn {
     display: block;

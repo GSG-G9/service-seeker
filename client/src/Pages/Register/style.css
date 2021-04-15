@@ -79,10 +79,10 @@
   color: #5c5c5c;
 }
 
-/* .signup .ant-form .ant-form-item .ant-form-item-label {
+.signup .ant-form .ant-form-item .ant-form-item-label {
   width: 33%;
   text-align: right;
-} */
+}
 
 .signup-form-container
   .ant-form-horizontal

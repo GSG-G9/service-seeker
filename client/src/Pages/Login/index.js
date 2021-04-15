@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import { Typography, Row, Col, Form, Alert } from 'antd';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 
 import { REGISTER_PAGE, HOME_PAGE } from '../../Utils/routes.constant';
 import { AuthContext } from '../../Context/Authentication';
@@ -41,67 +42,74 @@ const LoginPage = () => {
   return (
     <Row className="login">
       <Col className="login-left" span={15}>
-        <Form name="login" onFinish={onFinish}>
-          <Title id="login-left__title" level={3}>
-            Service Seeker
-          </Title>
-          {error && <Alert id="alert" message={error} type="error" showIcon />}
-          <Form.Item
-            name="email"
-            rules={[
-              {
-                required: true,
-                message: 'Please enter your email!',
-              },
-              {
-                type: 'email',
-                message: 'Enter a valid email!',
-              },
-            ]}
-          >
-            <label
-              htmlFor="email"
-              className="login-left__input"
-              style={{
-                paddingLeft: '42px',
-              }}
+        <Link to={HOME_PAGE} className="arrow-icon">
+          <ArrowLeftOutlined />
+        </Link>
+        <div className="left-section-details">
+          <Form name="login" onFinish={onFinish}>
+            <Title id="login-left__title" level={3}>
+              Service Seeker
+            </Title>
+            {error && (
+              <Alert id="alert" message={error} type="error" showIcon />
+            )}
+            <Form.Item
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please enter your email!',
+                },
+                {
+                  type: 'email',
+                  message: 'Enter a valid email!',
+                },
+              ]}
             >
-              Email:
-              <Input placeholder="Enter your email..." />
-            </label>
-          </Form.Item>
-          <Form.Item
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: 'Please enter your password!',
-              },
-              {
-                min: 8,
-                message: 'Password must be at least 8 characters.',
-              },
-            ]}
-          >
-            <label htmlFor="password" className="login-left__input">
-              Password:
-              <Input type="Password" placeholder="Enter your password..." />
-            </label>
-          </Form.Item>
-          <Form.Item>
-            <Button
-              className="login-btn"
-              type="primary"
-              htmlType="submit"
-              loading={isLoading}
+              <label
+                htmlFor="email"
+                className="login-left__input"
+                style={{
+                  paddingLeft: '42px',
+                }}
+              >
+                Email:
+                <Input placeholder="Enter your email..." />
+              </label>
+            </Form.Item>
+            <Form.Item
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please enter your password!',
+                },
+                {
+                  min: 8,
+                  message: 'Password must be at least 8 characters.',
+                },
+              ]}
             >
-              login
-            </Button>
-            <Link className="mobile-Sign-up-btn" to={REGISTER_PAGE}>
-              Sign up
-            </Link>
-          </Form.Item>
-        </Form>
+              <label htmlFor="password" className="login-left__input">
+                Password:
+                <Input type="Password" placeholder="Enter your password..." />
+              </label>
+            </Form.Item>
+            <Form.Item>
+              <Button
+                className="login-btn"
+                type="primary"
+                htmlType="submit"
+                loading={isLoading}
+              >
+                login
+              </Button>
+              <Link className="mobile-Sign-up-btn" to={REGISTER_PAGE}>
+                Sign up
+              </Link>
+            </Form.Item>
+          </Form>
+        </div>
       </Col>
       <Col className="login-right" span={9}>
         <Title className="login-right__title" level={2}>
